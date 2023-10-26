@@ -1,0 +1,56 @@
+$breakpoints: (
+        'sm': 'screen and (max-width: 414px)',
+        'md': 'screen and (max-width: 768px)',
+        'lg': 'screen and (max-width: 1000px)',
+        'xl': 'screen and (max-width: 1200px)',
+) !default;
+
+@mixin mq($breakpoint: md) {
+  @media #{map-get($breakpoints, $breakpoint)} {
+    @content;
+  }
+}
+
+.container {
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 960px;
+
+  .item {
+    flex: 0 0 300px;
+    margin: 10px 10px;
+  }
+
+  @include mq() {
+    width: 960px;
+    .item:nth-child(3n) {
+      margin-right: 0;
+    }
+  }
+
+  @include mq(lg) {
+    width: 720px;
+    .item:nth-child(2n) {
+      margin-right: 0;
+    }
+  }
+
+  @include mq(md) {
+    width: 540px;
+    justify-content: center;
+    .item:nth-child(1n) {
+      margin-right: 0;
+    }
+  }
+
+  @include mq(sm) {
+    width: 360px;
+  }
+
+  &:after {
+    content: "";
+    flex: auto;
+  }
+}
