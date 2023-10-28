@@ -8,4 +8,7 @@ jobs:
     runs-on: [self-hosted, linux]
     steps:
       - uses: actions/checkout@v2
-      - run: pnpm install; pnpm run build
+      - uses: pnpm/action-setup@v2.2.2
+        with:
+          version: 8.8.0
+      - run: pnpm install; pnpm run build; cp -r dist/* /var/www/html
