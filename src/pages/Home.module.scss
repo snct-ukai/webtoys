@@ -11,46 +11,62 @@ $breakpoints: (
   }
 }
 
-.container {
-  margin: auto;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  width: 960px;
+.wrapper{
+  max-width: 960px;
+  height: 100%;
+  background-color: #fff;
+  margin: 0 auto;
 
-  .item {
-    flex: 0 0 300px;
-    margin: 10px 10px;
-  }
-
-  @include mq() {
-    width: 960px;
-    .item:nth-child(3n) {
-      margin-right: 0;
+  .title{
+    margin-bottom: 20px;
+    h1{
+      font-size: 2em;
+      color: #000;
     }
   }
 
-  @include mq(lg) {
-    width: 720px;
-    .item:nth-child(2n) {
-      margin-right: 0;
+  .container {
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+
+    .item {
+      flex: 0 0 300px;
+      margin: 10px 10px;
     }
-  }
 
-  @include mq(md) {
-    width: 540px;
-    justify-content: center;
-    .item:nth-child(1n) {
-      margin-right: 0;
+    @include mq() {
+      width: 960px;
+      .item:nth-child(3n) {
+        margin-right: 0;
+      }
     }
-  }
 
-  @include mq(sm) {
-    width: 360px;
-  }
+    @include mq(lg) {
+      width: 720px;
+      .item:nth-child(2n) {
+        margin-right: 0;
+      }
+    }
 
-  &:after {
-    content: "";
-    flex: auto;
+    @include mq(md) {
+      width: 540px;
+      justify-content: center;
+      .item:nth-child(1n) {
+        margin-right: 0;
+      }
+    }
+
+    @include mq(sm) {
+      width: 360px;
+    }
+
+    &:after {
+      content: "";
+      flex: auto;
+    }
   }
 }
+
