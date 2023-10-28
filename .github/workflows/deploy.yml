@@ -1,0 +1,11 @@
+name: Deploy to Server at Home
+on:
+  push:
+    branches: ["release"]
+
+jobs:
+  deploy:
+    runs-on: [self-hosted, linux]
+    steps:
+      - uses: actions/checkout@v2
+      - run: pnpm install; pnpm run build
