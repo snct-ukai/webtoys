@@ -31,10 +31,24 @@ const BaseConversion = () => {
 
   return (
     <div className={style.container}>
-      <TextField className={style.item} label="Binary" value={parseInt(number).toString(2)} onChange={handleBinaryChange} size="small"/>
-      <TextField className={style.item} label="Octal" value={parseInt(number).toString(8)} onChange={handleOctalChange} size="small"/>
-      <TextField className={style.item} label="Decimal" value={number} onChange={handleDecimalChange} size="small"/>
-      <TextField className={style.item} label="Hexadecimal" value={parseInt(number).toString(16)} onChange={handleHexadecimalChange} size="small"/>
+      {parseInt(number) ? <>
+          <TextField className={style.item} label="Binary" value={parseInt(number).toString(2)}
+                     onChange={handleBinaryChange} size="small"/>
+          <TextField className={style.item} label="Octal" value={parseInt(number).toString(8)}
+                     onChange={handleOctalChange} size="small"/>
+          <TextField className={style.item} label="Decimal" value={number}
+                     onChange={handleDecimalChange} size="small"/>
+          <TextField className={style.item} label="Hexadecimal" value={parseInt(number).toString(16)}
+                     onChange={handleHexadecimalChange} size="small"/>
+        </> :
+        <>
+          <TextField className={style.item} label="Binary" value={""} onChange={handleBinaryChange} size="small"/>
+          <TextField className={style.item} label="Octal" value={""} onChange={handleOctalChange} size="small"/>
+          <TextField className={style.item} label="Decimal" value={""} onChange={handleDecimalChange} size="small"/>
+          <TextField className={style.item} label="Hexadecimal" value={""} onChange={handleHexadecimalChange}
+                     size="small"/>
+        </>
+      }
     </div>
   );
 }

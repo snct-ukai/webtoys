@@ -65,8 +65,8 @@ const ImageResize = () => {
   }
 
   return (
-    <>
-      <FileInput onChange={onInput}/>
+    <div className={style.wrapper}>
+      <FileInput onChange={onInput} accept={".png,.jpg,.jpeg"}/>
       <div className={style.container}>
         <div className={style.flex}>
           <div className={style.mode}>
@@ -101,10 +101,10 @@ const ImageResize = () => {
           </div>
         </div>
         {resizedImage && (
-          <img src={`data:image/jpeg;base64,${resizedImage}`} alt="リサイズ後の画像" width={width} height={height}/>
+          <img src={`data:image/jpeg;base64,${resizedImage}`} alt="リサイズ後の画像"/>
         )}
       </div>
-    </>
+    </div>
   )
 }
 
