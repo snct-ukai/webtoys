@@ -16,7 +16,7 @@ const Template = (props: { children: ReactNode }) => {
 
   return (
     <>
-      {flag && <div><Button onClick={() => router('/')}>Home</Button></div>}
+      {flag && <div style={{marginBottom:"20px"}}><Button onClick={() => router('/')}>Home</Button></div>}
       {props.children}
     </>
   )

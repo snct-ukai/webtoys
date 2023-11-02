@@ -1,7 +1,7 @@
 import {ChangeEvent, useRef} from "react";
 import FilledButton from "./FilledButton.tsx";
 
-const FileInput = (props: { onChange?: (e: ChangeEvent<HTMLInputElement>) => void }) => {
+const FileInput = (props: { onChange?: (e: ChangeEvent<HTMLInputElement>) => void, accept?: string }) => {
   const inputRef = useRef<HTMLInputElement>(null);
   const onClick = () => {
     inputRef.current?.click();
@@ -12,7 +12,7 @@ const FileInput = (props: { onChange?: (e: ChangeEvent<HTMLInputElement>) => voi
       <input
         ref={inputRef}
         type="file"
-        accept={"image/*"}
+        accept={props.accept}
         style={{display: "none"}}
         onChange={props.onChange}
       />
