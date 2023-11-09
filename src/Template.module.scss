@@ -1,12 +1,11 @@
 .container{
   width: 100%;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+  height: 100%;
   .main{
-    flex: 1;
   }
   .footer{
-    text-align: center;
+    position: sticky;
+    top: calc(100vh - 80px);
+    bottom: 0;
   }
 }
