@@ -5,13 +5,14 @@ type props = {
   fileType?: string;
   children?: ReactNode;
   style?: React.CSSProperties;
+  className?: string;
 }
 
-const DropZone: React.FC<props> = ({onDrop, fileType, style, children}) => {
+const DropZone: React.FC<props> = ({onDrop, fileType, style, children, className}) => {
   const handleDrop = useCallback((e: React.DragEvent<HTMLDivElement>) => {
     e.preventDefault();
     const file = Array.from(e.dataTransfer.files)[0];
-    if(fileType === undefined){
+    if (fileType === undefined) {
       return;
     }
     if (file.type !== fileType) {
@@ -26,7 +27,7 @@ const DropZone: React.FC<props> = ({onDrop, fileType, style, children}) => {
   }, []);
 
   return (
-    <div onDrop={handleDrop} onDragOver={handleDragOver} style={style}>
+    <div className={className} onDrop={handleDrop} onDragOver={handleDragOver} style={style}>
       {children}
     </div>
   );
