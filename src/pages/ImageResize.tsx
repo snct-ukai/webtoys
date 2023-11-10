@@ -67,43 +67,43 @@ const ImageResize = () => {
   return (
     <div className={style.wrapper}>
       <FileInput onChange={onInput} accept={".png,.jpg,.jpeg"}/>
-      <div className={style.container}>
-        <div className={style.flex}>
-          <div className={style.mode}>
-            <label>
-              <Radio name={"mode"} value="percent" checked={mode === "percent"} onChange={() => {
-                setMode("percent")
-              }}/>
-              比率
-            </label>
-            <label>
-              <Radio name={"mode"} value="pixel" checked={mode === "pixel"} onChange={() => {
-                setMode("pixel")
-              }}/>
-              ピクセル
-            </label>
+      {file && <div className={style.container}>
+          <div className={style.flex}>
+              <div className={style.mode}>
+                  <label>
+                      <Radio name={"mode"} value="percent" checked={mode === "percent"} onChange={() => {
+                        setMode("percent")
+                      }}/>
+                      比率
+                  </label>
+                  <label>
+                      <Radio name={"mode"} value="pixel" checked={mode === "pixel"} onChange={() => {
+                        setMode("pixel")
+                      }}/>
+                      ピクセル
+                  </label>
+              </div>
+              <div className={style.panel}>
+                {mode === "percent" ? (
+                  <Slider value={range} className={style.item} onChange={handleSlider}/>
+                ) : (
+                  <>
+                    <TextField label={"width"} value={width} type={"number"} size={"small"} className={style.item}
+                               onChange={(e) => {
+                                 setWidth(Number(e.target.value))
+                               }}/>
+                    <TextField label={"height"} value={height} type={"number"} size={"small"} className={style.item}
+                               onChange={(e) => {
+                                 setHeight(Number(e.target.value))
+                               }}/>
+                  </>
+                )}
+              </div>
           </div>
-          <div className={style.panel}>
-            {mode === "percent" ? (
-              <Slider value={range} className={style.item} onChange={handleSlider}/>
-            ) : (
-              <>
-                <TextField label={"width"} value={width} type={"number"} size={"small"} className={style.item}
-                           onChange={(e) => {
-                             setWidth(Number(e.target.value))
-                           }}/>
-                <TextField label={"height"} value={width} type={"number"} size={"small"} className={style.item}
-                           onChange={(e) => {
-                             setHeight(Number(e.target.value))
-                           }}/>
-              </>
-            )}
-          </div>
-        </div>
         {resizedImage && (
           <img src={`data:image/jpeg;base64,${resizedImage}`} alt="リサイズ後の画像"/>
         )}
-      </div>
+      </div>}
     </div>
   )
 }
