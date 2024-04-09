@@ -57,8 +57,8 @@ dependencies:
     specifier: ^6.1.0
     version: 6.1.0(react-dom@18.2.0)(react@18.2.0)
   yarn:
-    specifier: ^1.22.19
-    version: 1.22.19
+    specifier: ^1.22.22
+    version: 1.22.22
 
 devDependencies:
   '@types/react':
@@ -6044,8 +6044,8 @@ packages:
       yargs-parser: 21.1.1
     dev: false
 
-  /yarn@1.22.19:
-    resolution: {integrity: sha512-/0V5q0WbslqnwP91tirOvldvYISzaqhClxzyUKXYxs07yUILIs5jx/k6CFe8bvKSkds5w+eiOqta39Wk3WxdcQ==}
+  /yarn@1.22.22:
+    resolution: {integrity: sha512-prL3kGtyG7o9Z9Sv8IPfBNrWTDmXB4Qbes8A9rEzt6wkJV8mUvoirjU0Mp3GGAU06Y0XQyA3/2/RQFVuK7MTfg==}
     engines: {node: '>=4.0.0'}
     hasBin: true
     requiresBuild: true
