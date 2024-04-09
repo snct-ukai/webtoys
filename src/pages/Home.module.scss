@@ -1,7 +1,7 @@
 $breakpoints: (
         'sm': 'screen and (max-width: 414px)',
         'md': 'screen and (max-width: 768px)',
-        'lg': 'screen and (max-width: 1000px)',
+        'lg': 'screen and (max-width: 1023px)',
         'xl': 'screen and (max-width: 1200px)',
 ) !default;
 
@@ -37,6 +37,11 @@ $breakpoints: (
       margin: 10px 10px;
     }
 
+    &:after {
+      content: "";
+      flex: auto;
+    }
+
     @include mq() {
       width: 960px;
       .item:nth-child(3n) {
@@ -57,15 +62,14 @@ $breakpoints: (
       .item:nth-child(1n) {
         margin-right: 0;
       }
+
+      &:after {
+        display: none;
+      }
     }
 
     @include mq(sm) {
-      width: 360px;
-    }
-
-    &:after {
-      content: "";
-      flex: auto;
+      width: 100%;
     }
   }
 }

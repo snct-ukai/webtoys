@@ -1,15 +1,20 @@
-import React, {useCallback} from "react";
+import React, {ReactNode, useCallback} from "react";
 
 type props = {
   onDrop: (files: File) => void;
-  fileType: string;
-  style: React.CSSProperties;
+  fileType?: string;
+  children?: ReactNode;
+  style?: React.CSSProperties;
+  className?: string;
 }
 
-const DropZone: React.FC<props> = ({onDrop, fileType, style}) => {
+const DropZone: React.FC<props> = ({onDrop, fileType, style, children, className}) => {
   const handleDrop = useCallback((e: React.DragEvent<HTMLDivElement>) => {
     e.preventDefault();
     const file = Array.from(e.dataTransfer.files)[0];
+    if (fileType === undefined) {
+      return;
+    }
     if (file.type !== fileType) {
       alert('Invalid file type');
       return;
@@ -22,8 +27,8 @@ const DropZone: React.FC<props> = ({onDrop, fileType, style}) => {
   }, []);
 
   return (
-    <div onDrop={handleDrop} onDragOver={handleDragOver} style={style}>
-      {fileType}
+    <div className={className} onDrop={handleDrop} onDragOver={handleDragOver} style={style}>
+      {children}
     </div>
   );
 }

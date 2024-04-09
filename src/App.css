@@ -3,4 +3,6 @@
     margin: 0 auto;
     padding: 2rem;
     text-align: center;
+    font-family:"Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+    height: calc(100vh - 80px);
 }
