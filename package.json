@@ -15,7 +15,7 @@
     "@fontsource/roboto": "^5.0.8",
     "@mui/icons-material": "^5.14.15",
     "@mui/material": "^5.15.15",
-    "@mui/material-next": "6.0.0-alpha.104",
+    "@mui/material-next": "6.0.0-alpha.126",
     "@mui/styled-engine-sc": "^5.14.12",
     "@types/node": "^20.8.9",
     "add": "^2.0.6",
