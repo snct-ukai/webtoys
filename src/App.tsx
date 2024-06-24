@@ -5,20 +5,22 @@ import QrGenerator from "./pages/QrGenerator.tsx";
 import ImageResize from "./pages/ImageResize.tsx";
 import Template from "./Template.tsx";
 import BaseConversion from "./pages/BaseConversion.tsx";
+import CharactersCounter from "./pages/CharactersCounter.tsx";
 
 function App() {
-  return (
-    <BrowserRouter>
-      <Template>
-        <Routes>
-          <Route path="/" element={<Home/>}/>
-          <Route path="/qr-generator" element={<QrGenerator/>}/>
-          <Route path="image-resize" element={<ImageResize/>}/>
-          <Route path="base-conversion" element={<BaseConversion/>}/>
-        </Routes>
-      </Template>
-    </BrowserRouter>
-  )
+    return (
+        <BrowserRouter>
+            <Template>
+                <Routes>
+                    <Route path="/" element={<Home/>}/>
+                    <Route path="/qr-generator" element={<QrGenerator/>}/>
+                    <Route path="image-resize" element={<ImageResize/>}/>
+                    <Route path="base-conversion" element={<BaseConversion/>}/>
+                    <Route path="characters-counter" element={<CharactersCounter/>}/>
+                </Routes>
+            </Template>
+        </BrowserRouter>
+    )
 }
 
 export default App
